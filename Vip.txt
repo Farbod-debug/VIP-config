@@ -1,184 +1,91 @@
-[
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "tag": "socks-in",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "sniffing": {
-          "enabled": true,
-          "destOverride": ["http", "tls"]
-        },
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      },
-      {
-        "tag": "http-in",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "sniffing": {
-          "enabled": true,
-          "destOverride": ["http", "tls"]
-        },
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "in-yeki-vase-nika.global.ssl.fastly.net",
-              "port": 443,
-              "users": [
-                {
-                  "id": "0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd",
-                  "encryption": "none",
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "ws",
-          "security": "tls",
-          "tlsSettings": {
-            "serverName": "in-yeki-vase-nika.global.ssl.fastly.net",
-            "fingerprint": "chrome",
-            "alpn": ["http/1.1"],
-            "allowInsecure": false
-          },
-          "wsSettings": {
-            "path": "/containers/fi",
-            "host": "in-yeki-vase-nika.global.ssl.fastly.net"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole"
-      }
-    ],
-    "dns": {
-      "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
-      ]
-    },
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "inboundTag": ["socks-in", "http-in"],
-          "outboundTag": "proxy"
-        }
-      ]
-    }
+{
+  "log": {
+    "access": "",
+    "error": "",
+    "loglevel": "warning"
   },
-  {
-    "log": {
-      "loglevel": "warning"
-    },
-    "inbounds": [
-      {
-        "tag": "socks-in",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "sniffing": {
-          "enabled": true,
-          "destOverride": ["http", "tls"]
-        },
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "routeOnly": false
       },
-      {
-        "tag": "http-in",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "sniffing": {
-          "enabled": true,
-          "destOverride": ["http", "tls"]
-        },
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        }
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
       }
-    ],
-    "outbounds": [
-      {
-        "tag": "proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "140.248.159.164",
-              "port": 80,
-              "users": [
-                {
-                  "id": "0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd",
-                  "encryption": "none",
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "ws",
-          "security": "none",
-          "wsSettings": {
-            "path": "/containers/fi",
-            "host": "helimeligodi.global.ssl.fastly.net"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom"
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole"
-      }
-    ],
-    "dns": {
-      "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
-      ]
     },
-    "routing": {
-      "domainStrategy": "IPIfNonMatch",
-      "rules": [
-        {
-          "type": "field",
-          "inboundTag": ["socks-in", "http-in"],
-          "outboundTag": "proxy"
-        }
-      ]
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "0.0.0.0",
+      "protocol": "http",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "routeOnly": false
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
     }
-  }
-]
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "140.248.159.164",
+            "port": 80,
+            "users": [
+              {
+                "id": "0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd",
+                "security": "auto",
+                "encryption": "none",
+                "email": "https://gozargah.github.io/marzban/",
+                "alterId": 0
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "headers": {
+            "Pragma": "no-cache"
+          },
+          "path": "/containers/fi",
+          "host": "helimeligodi.global.ssl.fastly.net"
+        }
+      }
+    }
+  ],
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "8.8.8.8"
+    ]
+  },
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": []
+  },
+  "remarks": "🇺🇸US-بفرما کوکی-1"
+}
