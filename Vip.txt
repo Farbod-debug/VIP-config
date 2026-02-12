@@ -1,91 +1,12 @@
-{
-  "log": {
-    "access": "",
-    "error": "",
-    "loglevel": "warning"
-  },
-  "inbounds": [
-    {
-      "tag": "socks",
-      "port": 10808,
-      "listen": "0.0.0.0",
-      "protocol": "socks",
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls"
-        ],
-        "routeOnly": false
-      },
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "allowTransparent": false
-      }
-    },
-    {
-      "tag": "http",
-      "port": 10809,
-      "listen": "0.0.0.0",
-      "protocol": "http",
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls"
-        ],
-        "routeOnly": false
-      },
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "allowTransparent": false
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "tag": "proxy",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "140.248.159.164",
-            "port": 80,
-            "users": [
-              {
-                "id": "0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd",
-                "security": "auto",
-                "encryption": "none",
-                "email": "https://gozargah.github.io/marzban/",
-                "alterId": 0
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "ws",
-        "wsSettings": {
-          "headers": {
-            "Pragma": "no-cache"
-          },
-          "path": "/containers/fi",
-          "host": "helimeligodi.global.ssl.fastly.net"
-        }
-      }
-    }
-  ],
-  "dns": {
-    "servers": [
-      "1.1.1.1",
-      "8.8.8.8"
-    ]
-  },
-  "routing": {
-    "domainStrategy": "AsIs",
-    "rules": []
-  },
-  "remarks": "🇺🇸US-بفرما کوکی-1"
-}
+vless://0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd@www.speedtest.net:2095?security=none&type=httpupgrade&headerType=&path=%2F%3Fed%3D2095&host=ba2.badomzamini.uk#%F0%9F%87%A6%F0%9F%87%B1%D8%A2%D9%84%D8%A8%D8%A7%D9%86%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%D8%B3%D9%84%F0%9F%8D%8B
+vless://0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd@in-yeki-vase-nika.global.ssl.fastly.net:443?security=tls&type=ws&headerType=&path=%2Fcontainers%2Ffi&host=in-yeki-vase-nika.global.ssl.fastly.net&sni=in-yeki-vase-nika.global.ssl.fastly.net&fp=chrome&alpn=http%2F1.1#%F0%9F%87%AB%F0%9F%87%AEFL-Finland-1
+vless://0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd@151.101.25.242:80?security=none&type=ws&headerType=&path=%2Fcontainers%2Ffi&host=pizzabama.global.ssl.fastly.net#%F0%9F%87%A9%F0%9F%87%AAFL-Germany-1
+vless://0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd@theverge.com:80?security=none&type=ws&headerType=&path=%2Fcontainers%2Ffi&host=declanrice.global.ssl.fastly.net#%F0%9F%87%AB%F0%9F%87%AEFL-Finland-2
+vless://0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd@atawich.global.ssl.fastly.net:443?security=tls&type=ws&headerType=&path=%2Fcontainers%2Ffi&host=atawich.global.ssl.fastly.net&sni=atawich.global.ssl.fastly.net&fp=chrome&alpn=http%2F1.1#%F0%9F%87%A9%F0%9F%87%AAFL-Germany-2
+vless://0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd@pizzakakhi.global.ssl.fastly.net:443?security=tls&type=ws&headerType=&path=%2Fcontainers%2Ffi&host=pizzakakhi.global.ssl.fastly.net&sni=pizzakakhi.global.ssl.fastly.net&fp=chrome&alpn=http%2F1.1#%F0%9F%87%A9%F0%9F%87%AAFL-Germany-3
+vless://0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd@140.248.159.164:80?security=none&type=ws&headerType=&path=%2Fcontainers%2Ffi&host=helimeligodi.global.ssl.fastly.net#%F0%9F%87%BA%F0%9F%87%B8US-NewYork-1
+vless://0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd@140.248.159.164:80?security=none&type=ws&headerType=&path=%2Fcontainers%2Ffi&host=ahlekarbala.global.ssl.fastly.net#%F0%9F%87%AB%F0%9F%87%AEFL-Finland-3
+vless://0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd@151.101.25.242:80?security=none&type=ws&headerType=&path=%2Fcontainers%2Ffi&host=mohsenchavoshi.global.ssl.fastly.net#%F0%9F%87%A9%F0%9F%87%AAFL-Germany-5
+vless://0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd@ku.mezrabcode.ir:9831?security=none&type=tcp&headerType=http&path=%2F&host=pro30afzar.com#%F0%9F%87%A9%F0%9F%87%AA%D8%A2%D9%84%D9%85%D8%A7%D9%86-2%F0%9F%8E%80
+vless://0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd@ra.faraz360.ir:9850?security=none&type=tcp&headerType=http&path=%2F&host=pro30afzar.com#%F0%9F%A5%87%D9%87%D9%84%D9%86%D8%AF%D9%BE%D8%B1%D8%B3%D8%B1%D8%B9%D8%AA%F0%9F%87%B3%F0%9F%87%B1
+vless://0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd@188.114.98.132:2087?security=tls&type=ws&headerType=&path=%2Flatest%3Fed%3D2560&host=aq.fandaktabdar.com&sni=aq.fandaktabdar.com&fp=#%F0%9F%87%AB%F0%9F%87%AE%D9%81%D9%86%D9%84%D8%A7%D9%86%D8%AF-%D9%85%D8%B3%D8%AA%D9%82%DB%8C%D9%85
