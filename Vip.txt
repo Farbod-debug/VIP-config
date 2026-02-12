@@ -1,26 +1,196 @@
-vless://463877de-87e1-4188-8b71-e7f5fc56df62@5.10.214.154:443?path=%2Fws&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0&sni=dl98.primenet3.shop#%D9%87%D9%85%D8%B1%D8%A7%D9%87%20%D8%A7%D9%88%D9%84%20%E2%9C%85
-vless://fef4a93d-eb4f-4657-b56b-32a0dc060045@nodejs.org:443?path=%2F&security=tls&encryption=none&insecure=0&host=dev.nestandneighbours.com&type=ws&allowInsecure=0&sni=dev.nestandneighbours.com#%D9%87%D9%85%D8%B1%D8%A7%D9%87%20%D8%A7%D8%AE%D8%B1%E2%9C%85
-vless://e47bbd34-1bf2-44fc-8aec-256399c1c7ac@iraq5.nazminan.site:33987?security=none&encryption=none&host=snapp.ir&headerType=http&type=tcp#%D9%87%D9%85%D8%B1%D8%A7%D9%87%20%D8%A7%D9%88%D9%84
-vless://2637679c-e2fe-45a2-9962-e2ddf8469c29@digitalocean.com:2053?path=%2F&security=tls&encryption=none&insecure=0&host=foucse1.goooooooozoooo.sbs&type=ws&allowInsecure=0&sni=foucse1.goooooooozoooo.sbs#%E2%9A%A1%D9%87%D9%85%D8%B1%D8%A7%D9%87%20%D8%A7%D9%88%D9%84
-ss://Y2hhY2hhMjAtcG9seTEzMDU6NmUzZTQzZjQtMTJiNy00MmYxLThiOTMtNDFhMTUyZDU2MTJk@78.38.246.150:8446#%D9%87%D9%85%D8%B1%D8%A7%D9%87%20%D8%A7%D8%AE%D8%B1%E2%9C%85
-vless://463877de-87e1-4188-8b71-e7f5fc56df62@5.10.214.154:443?path=%2Fws&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0&sni=dl98.primenet3.shop#%F0%9F%A6%87%F0%9F%8E%80%20%D9%87%D9%85%D8%B1%D8%A7%D9%87%20%D8%A7%D9%88%D9%84
-vless://463877de-87e1-4188-8b71-e7f5fc56df62@5.10.214.154:443?path=%2Fws&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0&sni=dl98.primenet3.shop#%F0%9F%A6%87%F0%9F%8E%80%20%D9%87%D9%85%D8%B1%D8%A7%D9%87
-ss://Y2hhY2hhMjAtcG9seTEzMDU6NmUzZTQzZjQtMTJiNy00MmYxLThiOTMtNDFhMTUyZDU2MTJk@78.38.246.150:8446#%D9%87%D9%85%D8%B1%D8%A7%D9%87%20%F0%9F%A6%87%F0%9F%8E%80
-vless://463877de-87e1-4188-8b71-e7f5fc56df62@5.10.214.154:443?path=%2Fws&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0&sni=dl98.primenet3.shop#%D9%87%D9%85%D8%B1%D8%A7%D9%87%20%F0%9F%A6%87%F0%9F%8E%80
-vless://8e0a328a-a336-c796-0222-5e15ed927949@srv-c0.netmaster.cam:8008?security=none&encryption=none&type=ws&sni=1#%F0%9F%A6%87%F0%9F%8E%80
-vless://463877de-87e1-4188-8b71-e7f5fc56df62@5.10.214.154:443?path=%2Fws&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0&sni=dl98.primenet3.shop#%D9%87%D9%85%D8%B1%D8%A7%D9%87
-vless://d89d6641-3b1a-4f51-a194-9c9109fd21b6@v1.dabache.top:443?path=%2FXIXVPN%3Fed&security=tls&encryption=none&insecure=0&host=DiprOX.pages.DEV&fp=chrome&type=ws&allowInsecure=0&sni=DiprOX.pages.DEV#%F0%9F%87%A8%F0%9F%87%A6%20%20KOKI%20%20IRANCEL%20%E2%9C%85
-vless://3321a819-889d-40b3-b8fa-f34208827ef1@57.129.137.56:443?path=%2FXIXVPN%3Fed&security=tls&encryption=none&insecure=0&host=o00o.snip.qzz.io&fp=chrome&type=ws&allowInsecure=0&sni=o00o.snip.qzz.io#%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20%F0%9F%94%A5%20%40netovix
+{
+  "log": {
+    "access": "",
+    "error": "",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "routeOnly": false
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "0.0.0.0",
+      "protocol": "http",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "routeOnly": false
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "in-yeki-vase-nika.global.ssl.fastly.net",
+            "port": 443,
+            "users": [
+              {
+                "id": "0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd",
+                "security": "auto",
+                "encryption": "none",
+                "email": "https://gozargah.github.io/marzban/",
+                "alterId": 0
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "in-yeki-vase-nika.global.ssl.fastly.net",
+          "allowInsecure": false,
+          "fingerprint": "chrome",
+          "alpn": [
+            "http/1.1"
+          ],
+          "show": false
+        },
+        "wsSettings": {
+          "headers": {
+            "Pragma": "no-cache"
+          },
+          "path": "/containers/fi",
+          "host": "in-yeki-vase-nika.global.ssl.fastly.net"
+        }
+      }
+    }
+  ],
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "8.8.8.8"
+    ]
+  },
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": []
+  },
+  "remarks": "🇫🇮سلام چاتی پاتی"
+}
 
-vless://4a8d4562-7192-4e83-8a24-75515a1666a3@173.245.49.254:80?path=%2F%3Fed&security=none&encryption=none&host=fiT-acADEmyw21824Ac8c.ECoToURISs.cO.Uk.&type=ws#KOKI%20%20IRANCEL%20%E2%9C%85
-vless://3321a819-889d-40b3-b8fa-f34208827ef1@57.129.137.56:443?path=%2FXIXVPN%3Fed&security=tls&encryption=none&insecure=0&host=o00o.snip.qzz.io&fp=chrome&type=ws&allowInsecure=0&sni=o00o.snip.qzz.io#%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20%F0%9F%94%A5%20%40netovix
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp5T0RMWFZMejJGV05URmVTU25nM0Zt@136.244.100.113:443#KOKI%20%20IRANCEL%20%E2%9C%85
-vless://d89d6641-3b1a-4f51-a194-9c9109fd21b6@v1.dabache.top:443?path=%2FXIXVPN%3Fed&security=tls&encryption=none&insecure=0&host=DiprOX.pages.DEV&fp=chrome&type=ws&allowInsecure=0&sni=DiprOX.pages.DEV#%F0%9F%87%A8%F0%9F%87%A6%20KOKI%20%20IRANCEL%20%E2%9C%85
-vless://d89d6641-3b1a-4f51-a194-9c9109fd21b6@creativecommons.org:443?path=%2Fassets&security=tls&encryption=none&insecure=0&host=diprox.pages.dev&fp=chrome&type=ws&allowInsecure=0&sni=DiprOX.pages.DEV#WIFI%201
-vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@45.82.251.208:8880?mode=gun&security=none&encryption=none&type=grpc#Wifi%202
-vless://d89d6641-3b1a-4f51-a194-9c9109fd21b6@creativecommons.org:443?path=%2Fassets&security=tls&encryption=none&insecure=0&host=diprox.pages.dev&fp=chrome&type=ws&allowInsecure=0&sni=DiprOX.pages.DEV#Wifi%203
-vless://3775d133-dc3a-4a02-8095-5c70c328ae9f@172.66.128.70:80?path=%2F%3Fed&security=none&encryption=none&host=HUge-ActOR48bf36fHJV.ecOTouriSS.co.uK.&type=ws#Wifi%204
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@51.38.227.72:2053?path=%2FXIXVPN%3Fed&security=tls&encryption=none&insecure=0&host=sni.111000.indevs.in&type=ws&allowInsecure=0&sni=sni.111000.indevs.in#%F0%9F%87%AB%F0%9F%87%B7%20Wifi%205
-vless://6abc2840-25fd-4dd7-b1aa-0892fe98f2d9@172.66.128.70:80?path=%2F%3Fed&security=none&encryption=none&host=MySterIOUS-chECk94Bl5oXQ6C.eCoTOUriSs.cO.uK.&type=ws#Wifi%206
-vless://04c808e2-0b59-47b0-a54b-32fc7ef1c902@104.17.167.134:443?path=%2FXIXVPN%3Fed&security=tls&encryption=none&insecure=0&host=cf.cloudip.ggff.net&fp=chrome&type=ws&allowInsecure=0#%F0%9F%87%A8%F0%9F%87%A6%20WIFI%207
-vless://2637679c-e2fe-45a2-9962-e2ddf8469c29@Ns4.iran-mehrbu.ir:443?path=%2Famir%3Fed%3D2048&security=tls&alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&insecure=0&host=mostrabane.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=mostrabane.global.ssl.fastly.net#wifi
+{
+  "log": {
+    "access": "",
+    "error": "",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "routeOnly": false
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "0.0.0.0",
+      "protocol": "http",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "routeOnly": false
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "140.248.159.164",
+            "port": 80,
+            "users": [
+              {
+                "id": "0e509af4-5ef5-47e1-a9ac-2b27f9d0b2cd",
+                "security": "auto",
+                "encryption": "none",
+                "email": "https://gozargah.github.io/marzban/",
+                "alterId": 0
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "headers": {
+            "Pragma": "no-cache"
+          },
+          "path": "/containers/fi",
+          "host": "helimeligodi.global.ssl.fastly.net"
+        }
+      }
+    }
+  ],
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "8.8.8.8"
+    ]
+  },
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": []
+  },
+  "remarks": "🇺🇸US-بفرما کوکی-1"
+}
+
+
+
